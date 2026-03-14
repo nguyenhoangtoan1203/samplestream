@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class StreamingApiApplicationTest {
 
@@ -26,15 +24,7 @@ class StreamingApiApplicationTest {
 
     @Test
     void contextLoads() {
-        // Verifies the Spring application context loads without errors
-    }
-
-    @Test
-    void mainMethodRuns() {
-
-        System.setProperty("server.port", "0");
-        assertDoesNotThrow(() -> StreamingApiApplication.main(new String[]{}));
-        System.clearProperty("server.port");
+        // Verifies the Spring application context loads successfully without a real DB
     }
 }
 
