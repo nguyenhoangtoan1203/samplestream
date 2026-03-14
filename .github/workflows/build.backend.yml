@@ -1,4 +1,4 @@
-name: Java CI - Backend
+name: Backend CI - Java
 
 on:
   push:
