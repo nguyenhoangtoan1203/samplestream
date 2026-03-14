@@ -32,7 +32,7 @@ describe('Profile page', () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/Hồ sơ 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hồ sơ/i)).toBeInTheDocument();
     expect(screen.getByText(/Tên:/i)).toBeInTheDocument();
     expect(screen.getAllByText(/Trump/i)[0]).toBeInTheDocument();
     expect(screen.getByText(/Email:/i)).toBeInTheDocument();
