@@ -33,12 +33,8 @@ jobs:
           cache: maven          # caches ~/.m2 between runs
 
       # ── Build & test ────────────────────────────────────────────────────────
+      # MongoDB is mocked at the test level — no real DB needed in CI.
       - name: Build with Maven (compile + test + package)
-        env:
-          # Provide a dummy MongoDB URI so Spring context can start during tests.
-          # Replace with a real GitHub Secret if your tests need a live DB.
-          SPRING_DATA_MONGODB_URI: ${{ secrets.MONGODB_URI || 'mongodb://localhost:27017/testdb' }}
-          SPRING_DATA_MONGODB_DATABASE: testdb
         run: ./mvnw --no-transfer-progress clean package
 
       # ── Upload JAR as artifact ───────────────────────────────────────────────
